@@ -1,182 +1,84 @@
-/* Clínica Semear - main.js (estável)
-   Mantém tudo funcionando sem depender de frameworks.
-*/
+(() => {
+  'use strict';
 
-(function () {
-  "use strict";
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  const floatingWhatsapp = document.querySelector('.floating-whatsapp');
+  const cookieBanner = document.querySelector('#cookie-banner');
+  const cookieAccept = document.querySelector('#cookie-accept');
+  const cookieReject = document.querySelector('#cookie-reject');
 
-  const $ = (sel, root=document) => root.querySelector(sel);
-  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-  const on = (el, evt, cb) => el && el.addEventListener(evt, cb);
+  const syncHeader = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 8);
+    if (floatingWhatsapp) floatingWhatsapp.classList.toggle('is-visible', window.scrollY > 450);
+  };
 
-  // ----- Mobile menu -----
-  function initMobileMenu() {
-    const btn = $("#hamburger");
-    const menu = $("#mobileMenu");
-    if (!btn || !menu) return;
+  const closeMenu = () => {
+    if (!toggle || !nav) return;
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menu');
+  };
 
-    const setOpen = (open) => {
-      menu.classList.toggle("open", open);
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    };
-
-    on(btn, "click", () => setOpen(!menu.classList.contains("open")));
-    $$('a[href^="#"]', menu).forEach(a => on(a, "click", () => setOpen(false)));
-    on(document, "keydown", (e) => { if (e.key === "Escape") setOpen(false); });
-  }
-
-  // ----- Hero slider (single <img>) -----
-  function initHeroSlider() {
-    const img = $("#hero-slider-img");
-    if (!img) return;
-
-    const prev = $(".hero-slider-prev");
-    const next = $(".hero-slider-next");
-    const dotsWrap = $(".hero-slider-dots");
-
-    const total = 8; // hero-1.jpg ... hero-8.jpg
-    let idx = 1;
-    let timer = null;
-
-    function setActiveDot() {
-      if (!dotsWrap) return;
-      $$("button", dotsWrap).forEach((b, i) => b.classList.toggle("active", i + 1 === idx));
-    }
-
-    function show(n) {
-      idx = ((n - 1 + total) % total) + 1;
-      img.src = `hero-${idx}.jpg`;
-      img.alt = `Clínica Semear - foto ${idx}`;
-      setActiveDot();
-    }
-
-    function start() {
-      stop();
-      timer = setInterval(() => show(idx + 1), 4500);
-    }
-    function stop() { if (timer) clearInterval(timer); timer = null; }
-
-    // Build dots once
-    if (dotsWrap && !dotsWrap.children.length) {
-      for (let i = 1; i <= total; i++) {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "hero-dot";
-        b.setAttribute("aria-label", `Foto ${i}`);
-        b.addEventListener("click", () => { show(i); start(); });
-        dotsWrap.appendChild(b);
-      }
-    }
-
-    on(prev, "click", () => { show(idx - 1); start(); });
-    on(next, "click", () => { show(idx + 1); start(); });
-
-    // Pause on hover
-    const slider = $(".hero-slider");
-    on(slider, "mouseenter", stop);
-    on(slider, "mouseleave", start);
-
-    // Touch swipe
-    if (slider) {
-      let x0 = null;
-      slider.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
-      slider.addEventListener("touchend", (e) => {
-        if (x0 == null) return;
-        const x1 = e.changedTouches[0].clientX;
-        const dx = x1 - x0;
-        if (Math.abs(dx) > 40) show(dx > 0 ? idx - 1 : idx + 1);
-        x0 = null;
-        start();
-      }, { passive: true });
-    }
-
-    show(1);
-    start();
-  }
-
-  // ----- Testimonials (grid) -----
-  function renderTestimonials() {
-    const grid = $("#testimonials-grid");
-    if (!grid) return;
-
-    const list = window.testimonials || [];
-    // fallback content if data missing
-    if (!Array.isArray(list) || list.length === 0) return;
-
-    grid.innerHTML = "";
-    list.forEach((t) => {
-      const card = document.createElement("article");
-      card.className = "testimonial";
-      const initial = (t.name || "P").trim().charAt(0).toUpperCase();
-      card.innerHTML = `
-        <div class="testimonial-stars" aria-label="5 estrelas">${"★".repeat(5)}</div>
-        <p class="testimonial-quote">“${t.text || ""}”</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">${initial}</div>
-          <div class="testimonial-meta">
-            <div class="testimonial-name">${t.name || ""}</div>
-            <div class="testimonial-sub">${t.role || ""}</div>
-          </div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-  }
-
-  // ----- FAQ (accordion) -----
-  function renderFAQ() {
-    const container = $("#faq-container");
-    if (!container) return;
-
-    const list = window.faqs || [];
-    if (!Array.isArray(list) || list.length === 0) return;
-
-    container.innerHTML = "";
-    list.forEach((f, i) => {
-      const item = document.createElement("div");
-      item.className = "faq-item";
-      item.innerHTML = `
-        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a-${i}">
-          <span>${f.question || ""}</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer" id="faq-a-${i}" hidden>
-          <p>${f.answer || ""}</p>
-        </div>
-      `;
-      container.appendChild(item);
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const next = !nav.classList.contains('is-open');
+      nav.classList.toggle('is-open', next);
+      toggle.setAttribute('aria-expanded', String(next));
+      toggle.setAttribute('aria-label', next ? 'Fechar menu' : 'Abrir menu');
     });
 
-    $$(".faq-question", container).forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-
-        // close all
-        $$(".faq-question", container).forEach((b) => {
-          b.setAttribute("aria-expanded", "false");
-          const panel = document.getElementById(b.getAttribute("aria-controls"));
-          if (panel) panel.hidden = true;
-          const icon = $(".faq-icon", b);
-          if (icon) icon.textContent = "+";
-        });
-
-        // toggle current
-        btn.setAttribute("aria-expanded", expanded ? "false" : "true");
-        const panel = document.getElementById(btn.getAttribute("aria-controls"));
-        if (panel) panel.hidden = expanded ? true : false;
-        const icon = $(".faq-icon", btn);
-        if (icon) icon.textContent = expanded ? "+" : "–";
-      });
+    nav.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) { closeMenu(); toggle.focus(); }
     });
+    document.addEventListener('click', (event) => { if (!header.contains(event.target)) closeMenu(); });
+    window.matchMedia('(max-width: 1080px)').addEventListener('change', closeMenu);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initMobileMenu();
-    initHeroSlider();
-    renderTestimonials();
-    renderFAQ();
-    if (window.lucide && typeof window.lucide.createIcons === "function") {
-      window.lucide.createIcons();
-    }
+  document.querySelectorAll('.js-whatsapp').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (typeof window.gtag_report_conversion !== 'function') return;
+      event.preventDefault();
+      window.gtag_report_conversion(link.href);
+    });
   });
+
+  let consentTrigger = null;
+  document.querySelectorAll('.cookie-settings').forEach((button) => {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      consentTrigger = button;
+      cookieBanner.hidden = false;
+      cookieBanner.focus();
+    });
+  });
+
+  const setConsent = (accepted) => {
+    const state = accepted ? 'granted' : 'denied';
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: state,
+        analytics_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
+    }
+    try { localStorage.setItem('semear_cookie_consent', accepted ? 'accepted' : 'rejected'); } catch (_) {}
+    if (cookieBanner) cookieBanner.hidden = true;
+    if (consentTrigger) { consentTrigger.focus(); consentTrigger = null; }
+  };
+
+  let savedConsent = null;
+  try { savedConsent = localStorage.getItem('semear_cookie_consent'); } catch (_) {}
+  if (cookieBanner && !['accepted', 'rejected'].includes(savedConsent)) cookieBanner.hidden = false;
+  if (savedConsent === 'accepted') setConsent(true);
+  if (savedConsent === 'rejected') setConsent(false);
+  if (cookieAccept) cookieAccept.addEventListener('click', () => setConsent(true));
+  if (cookieReject) cookieReject.addEventListener('click', () => setConsent(false));
+
+  window.addEventListener('scroll', syncHeader, { passive: true });
+  syncHeader();
 })();
