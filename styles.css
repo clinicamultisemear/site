@@ -294,3 +294,77 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
   .main-nav { position: static; display: grid; width: 100%; max-height: none; }
   .hero { padding-top: 40px; }
 }
+
+/* Refinamento visual: formas suaves, títulos mais leves e hierarquia das terapias. */
+:root { --ink: #203649; --soft: #f5f8fa; --soft-pink: #fff1f5; --radius: 28px; }
+.hero { min-height: 760px; background: linear-gradient(115deg, #fff8f5 0%, #fff 52%, #eef8f9 100%); }
+.hero-grid { gap: 64px; }
+.hero h1 { font-size: clamp(46px, 4.7vw, 68px); line-height: 1.09; letter-spacing: -.045em; font-weight: 750; }
+.hero h1 span { color: #bd2258; }
+.lead { font-size: 18px; line-height: 1.8; max-width: 550px; }
+.hero-photo-wrap { padding: 10px; border-radius: 150px 150px 32px 32px; box-shadow: 0 22px 65px #29495c17; }
+.hero-photo { border-radius: 140px 140px 25px 25px; height: 510px; }
+.hero-card { left: -24px; bottom: 24px; border-radius: 20px; padding: 22px; }
+.hero-card-kicker { color: #a92854; }
+.hero-trust { margin-top: 30px; }
+.btn { border-radius: 999px; padding-inline: 26px; }
+.btn-primary { background: #bd2258; box-shadow: 0 8px 22px #bd22581c; }
+.btn-primary:hover { background: #a91e4e; }
+.section-heading h2, .signs-grid h2, .structure-copy h2, .faq-intro h2, .contact-copy h2 { font-size: clamp(32px, 3.4vw, 46px); font-weight: 700; line-height: 1.17; letter-spacing: -.035em; text-wrap: balance; }
+.section-kicker { letter-spacing: .13em; font-size: 11px; }
+.section-heading { margin-bottom: 40px; }
+.plans-strip { background: #fff; padding-block: 30px; }
+.plan-card { background: #f8fafb; box-shadow: none; border-color: #e8eef1; }
+.pillar-card { border: 0; background: #fff6f8; box-shadow: none; padding: 34px; }
+.pillar-card:nth-child(2) { background: #eff7fb; }
+.pillar-card:nth-child(3) { background: #f5f7ef; }
+.pillar-number { background: #fff; border-radius: 50%; }
+.pillar-card h3 { margin-top: 22px; }
+.signs-section { background: #f0f7f8; }
+.sign-item { border: 0; }
+.steps-grid li { border-top-width: 2px; }
+.steps-grid li > span { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #f5f1f3; color: #a92854; }
+#terapias { background: #faf7f5; }
+.therapy-grid { gap: 18px; }
+.therapy-card { min-height: 235px; padding: 30px; border-color: #eee7e4; border-radius: 24px; }
+.therapy-card h3 { font-size: 20px; font-weight: 700; }
+.therapy-card p { font-size: 15px; line-height: 1.75; }
+.therapy-badge { border-radius: 50%; width: 46px; height: 46px; }
+.therapy-card.featured { grid-column: 1 / -1; min-height: 0; display: grid; grid-template-columns: 64px 1fr 1.3fr; align-items: center; gap: 24px; background: #fff0f5; border: 1px solid #eed0dc; }
+.therapy-card.featured h3, .therapy-card.featured p { margin: 0; }
+.therapy-card.featured .therapy-badge { width: 60px; height: 60px; background: #bd2258; color: #fff; }
+.therapy-card:last-child { grid-column: span 2; }
+.team-group { border: 0; border-left: 3px solid #e6bfd0; border-radius: 0 20px 20px 0; background: #faf8f9; padding: 26px; }
+.team-group:nth-child(even) { border-left-color: #c0dce6; background: #f5f9fb; }
+.team-group p { line-height: 1.9; }
+.contact-section { background: #234e68; position: relative; }
+.contact-copy h2 { max-width: 490px; }
+.contact-card { box-shadow: none; }
+@media (max-width: 1080px) {
+  .hero { min-height: auto; }
+  .hero-copy { max-width: 720px; }
+  .hero-grid { gap: 38px; }
+  .hero-media { max-width: 680px; width: 100%; margin-inline: auto; }
+  .hero-photo { height: 470px; }
+  .hero-trust { grid-template-columns: repeat(3, 1fr); }
+  .hero-trust div { border: 0; padding: 0; }
+  .therapy-card.featured { grid-template-columns: 60px 1fr; gap: 18px; }
+  .therapy-card.featured p { grid-column: 1 / -1; }
+  .therapy-card:last-child { grid-column: auto; }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: clamp(39px, 10.5vw, 54px); }
+  .hero { padding-bottom: 48px; }
+  .hero-photo { height: 370px; }
+  .hero-photo-wrap { border-radius: 100px 100px 26px 26px; }
+  .hero-photo { border-radius: 92px 92px 20px 20px; }
+  .hero-card { left: 16px; padding: 16px; }
+  .hero-trust { gap: 10px; }
+  .hero-trust strong { font-size: 12px; line-height: 1.5; }
+  .hero-trust span { font-size: 11px; }
+  .plan-logos { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .plan-card { padding: 0 8px; gap: 6px; justify-content: center; }
+  .plan-card strong { font-size: 13px; }
+  .plan-mark { width: 7px; height: 7px; flex-shrink: 0; }
+  .therapy-card { min-height: 0; padding: 25px; }
+}

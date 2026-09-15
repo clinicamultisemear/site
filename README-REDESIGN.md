@@ -54,3 +54,7 @@ NODE_PATH=/tmp/semear-audit/node_modules node scripts/check-site.cjs
 - Conferir cache/compressão e métricas na hospedagem real.
 
 O Pull Request deve permanecer sem merge automático.
+
+## Refinamento de visual e linguagem
+
+Após revisão do usuário, a página recebeu títulos mais naturais, descrições de terapias em linguagem simples, cores suaves, foto principal com moldura arredondada e destaque para ABA. As informações operacionais, fotos e configuração do Google Ads foram preservadas. HTML, sintaxe JS, diff e os 18 cenários responsivos/de acessibilidade passaram novamente. As notas Lighthouse acima se referem à versão anterior a este refinamento.
