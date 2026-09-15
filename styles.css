@@ -381,11 +381,11 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
 @media (max-width: 600px) { .section { padding-block: 56px; } .hero { padding-top: 112px; } }
 
 /* Galeria horizontal: fotos completas, sem rotação automática. */
-.clinic-gallery { min-width: 0; }
+.clinic-gallery { min-width: 0; width: 100%; max-width: 440px; justify-self: center; }
 .gallery-hint { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0 0 16px; }
-.clinic-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 24px; scrollbar-width: thin; scrollbar-color: #d4abbc #f5f1f4; }
+.clinic-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; border-radius: 24px; scrollbar-width: none; }
 .clinic-slide { flex: 0 0 100%; min-width: 0; margin: 0; scroll-snap-align: start; background: #fff; border: 1px solid #e9eaf0; border-radius: 24px; overflow: hidden; }
-.clinic-slide img { width: 100%; height: 480px; object-fit: contain; background: #f2f4f7; }
+.clinic-slide img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; }
 .clinic-slide figcaption { padding: 17px 20px; font-size: 14px; color: var(--ink); }
 .gallery-controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 18px; }
 .gallery-controls[hidden] { display: none; }
@@ -393,4 +393,8 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
 .gallery-controls button:hover { background: #fff1f6; }
 .gallery-controls button:disabled { opacity: .4; cursor: default; }
 .gallery-count { font-size: 13px; color: var(--muted); min-width: 55px; text-align: center; }
-@media (max-width: 600px) { .clinic-slide img { height: 380px; } }
+@media (max-width: 600px) { .clinic-gallery { max-width: 360px; } }
+
+.clinic-track::-webkit-scrollbar { display: none; }
+.clinic-slide figcaption { min-height: 64px; display: flex; align-items: center; font-weight: 600; line-height: 1.5; }
+.gallery-controls { gap: 20px; }
