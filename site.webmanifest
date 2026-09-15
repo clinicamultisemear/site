@@ -1,0 +1,9 @@
+{
+  "name": "Clínica Multiespecialidades Semear",
+  "short_name": "Clínica Semear",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "pt-BR"
+}

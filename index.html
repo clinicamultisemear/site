@@ -1,531 +1,378 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18007017680"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18007017680');
-</script>
+  <meta charset="utf-8">
+  <!-- Google Ads: preservado do site atual -->
   <script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    try {
+      if (localStorage.getItem('semear_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', {ad_storage: 'granted', analytics_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted'});
+      }
+    } catch (_) {}
+    gtag('js', new Date());
+    gtag('config', 'AW-18007017680');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18007017680"></script>
+  <script>
+    function gtag_report_conversion(url) {
+      var navigated = false;
+      var go = function () {
+        if (navigated) return;
+        navigated = true;
+        if (typeof url !== 'undefined') window.location.href = url;
+      };
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18007017680/99G-CIWyqIscENCRtYpD',
+          'event_callback': go,
+          'event_timeout': 1200
+        });
+        window.setTimeout(go, 1300);
+      } else {
+        go();
+      }
+      return false;
     }
-  };
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18007017680/99G-CIWyqIscENCRtYpD',
-    'event_callback': callback
-  });
-  return false;
-}
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Semear - Especialistas em Autismo em São Luís, MA</title>
-    
-    <!-- SEO & Favicon placeholder (injected via JS) -->
-    <meta name="description" content="Atendimento especializado para crianças com autismo em São Luís. Terapia ABA, Fonoaudiologia, Terapia Ocupacional e mais. Agende sua avaliação.">
-    
-        <meta name="keywords" content="Clínica para autismo em São Luís, Clínica TEA São Luís, Terapia ABA São Luís, Fonoaudiologia infantil São Luís, Terapia Ocupacional infantil São Luís, Integração Sensorial São Luís, Psicopedagogia São Luís">
-    <meta property="og:title" content="Clínica Semear - Especialistas em Autismo em São Luís, MA">
-    <meta property="og:description" content="Atendimento multidisciplinar humanizado para crianças com TEA em São Luís. ABA, Fono, TO, Integração Sensorial e mais. Agende sua avaliação.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1544955404-b9b6e6be672e?q=80&w=2062&auto=format&fit=crop">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
-    <meta name="geo.region" content="BR-MA">
-    <meta name="geo.placename" content="São Luís">
+  </script>
 
-<!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#4A90E2',
-                            yellow: '#FFCA28',
-                            red: '#EF5350',
-                            green: '#66BB6A',
-                            text: '#2D3748',
-                            bg: '#F7FAFC'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://www.clinicasemear.com/">
+  <link rel="icon" type="image/png" href="/assets/logo-semear-160.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="geo.region" content="BR-MA">
+  <meta name="geo.placename" content="São Luís">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <title>Clínica Semear | Terapias para TEA e Neurodesenvolvimento em São Luís</title>
+  <meta name="description" content="Clínica multiprofissional em São Luís para TEA e neurodesenvolvimento. ABA, Fonoaudiologia, Terapia Ocupacional, Integração Sensorial, Psicopedagogia e outras terapias. Atendemos Unimed, GEAP e Luminar.">
+  <meta name="keywords" content="clínica autismo São Luís, terapia ABA São Luís, fonoaudiologia autismo São Luís, terapia ocupacional autismo São Luís, integração sensorial São Luís, psicopedagogia São Luís, Clínica Semear">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Clínica Semear">
+  <meta property="og:url" content="https://www.clinicasemear.com/">
+  <meta property="og:title" content="Clínica Semear | Cuidado multiprofissional em São Luís">
+  <meta property="og:description" content="Atendimento multiprofissional para TEA e neurodesenvolvimento, com equipe integrada e acompanhamento individualizado.">
+  <meta property="og:image" content="https://www.clinicasemear.com/estrutura-4.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clínica Semear | Cuidado multiprofissional em São Luís">
+  <meta name="twitter:description" content="ABA, Fonoaudiologia, Terapia Ocupacional, Integração Sensorial e outras terapias.">
+  <meta name="twitter:image" content="https://www.clinicasemear.com/estrutura-4.jpg">
+
+  <link rel="preload" as="image" href="assets/estrutura-4-960.webp" imagesrcset="assets/estrutura-4-480.webp 480w, assets/estrutura-4-960.webp 896w" imagesizes="(max-width: 600px) 100vw, (max-width: 1080px) 90vw, 540px" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalClinic", "LocalBusiness"],
+    "name": "Clínica Multiespecialidades Semear",
+    "alternateName": "Clínica Semear",
+    "url": "https://www.clinicasemear.com/",
+    "logo": "https://www.clinicasemear.com/logo-semear.png",
+    "image": "https://www.clinicasemear.com/estrutura-4.jpg",
+    "description": "Clínica multiprofissional para TEA e outras necessidades do neurodesenvolvimento em São Luís, Maranhão.",
+    "telephone": ["+55 98 99217-1235", "+55 98 99991-8289"],
+    "email": "clinicamultisemear@gmail.com",
+    "identifier": {"@type":"PropertyValue","name":"CNES","value":"2949873"},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Existente, nº 3, Letra B, Quadra 10, Lote 3, Jardim das Margaridas",
+      "addressLocality": "São Luís",
+      "addressRegion": "MA",
+      "postalCode": "65052-866",
+      "addressCountry": "BR"
+    },
+    "areaServed": "São Luís - MA",
+    "sameAs": ["https://www.instagram.com/clinicamultsemear/"]
+  }
+  </script>
 </head>
-<body class="bg-white text-brand-text antialiased selection:bg-brand-blue selection:text-white">
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <a href="/" class="flex items-center gap-3">
-                        <img src="logo-semear.png"
-                             alt="Clínica Multiespecialidades Semear"
-                             class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105">
-                        <span class="font-display font-bold text-xl tracking-tight text-gray-800">
-                            Clínica Semear
-                        </span>
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#sobre" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Sobre</a>
-                    <a href="#terapias" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Terapias</a>
-                    <a href="#equipe" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Equipe</a>
-                    <a href="#faq" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Dúvidas</a>
-                    <a href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0"
-onclick="return gtag_report_conversion('https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0');" 
-                       class="bg-brand-green hover:bg-green-600 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-2">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i>
-                        Agendar Agora
-                    </a>
-                </div>
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="Clínica Semear Multiespecialidades - início">
+        <img src="assets/logo-semear-160.png" alt="Clínica Multiespecialidades Semear" width="64" height="64"><span class="brand-name">Clínica Semear<small>Multiespecialidades</small></span>
+      </a>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-blue focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu Panel -->
-        <div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#sobre" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Sobre</a>
-                <a href="#terapias" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Terapias</a>
-                <a href="#equipe" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Equipe</a>
-                <a href="#faq" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Dúvidas</a>
-                <a href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0"
-onclick="return gtag_report_conversion('https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0');"
-class="block w-full text-center mt-4 bg-brand-green text-white px-4 py-3 rounded-lg font-bold">
-    Agendar pelo WhatsApp
-</a>
-            </div>
-        </div>
-    </nav>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-bg">
-        <!-- Decorative blobs -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl"></div>
-
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                <div class="lg:w-1/2 text-center lg:text-left hero-content">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/10 text-brand-blue text-sm font-semibold mb-6">
-                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
-                        São Luís - Maranhão
-                    </div>
-                    <h1 class="font-display text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900">
-                        Atendimento Especializado para <span class="text-brand-blue">Crianças Autistas</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Clínica exclusiva para crianças autistas de 3 a 20 anos em São Luís. Atendimento multidisciplinar com ABA, Fonoaudiologia, Terapia Ocupacional e Integração Sensorial, focado no desenvolvimento da autonomia, comunicação e qualidade de vida da criança.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                       <a href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0"
-onclick="return gtag_report_conversion('https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0');"
-class="bg-brand-green hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-green-200 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
-    <i data-lucide="message-circle"></i>
-    Agendar Avaliação
-</a>
-                        <a href="#terapias" class="bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center">
-                            Conhecer Terapias
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 relative hero-image">
-                    
-<div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-all duration-500">
-    <!-- HERO SLIDER -->
-    <div class="hero-slider">
-        <img id="hero-slider-img"
-             src="hero-1.jpg"
-             alt="Clínica Semear - ambiente e atendimentos"
-             class="w-full h-auto object-cover aspect-[4/3] hero-slider-img">
-        <!-- Controls -->
-        <button type="button" class="hero-slider-btn hero-slider-prev" aria-label="Foto anterior">
-            <i data-lucide="chevron-left" class="w-5 h-5"></i>
-        </button>
-        <button type="button" class="hero-slider-btn hero-slider-next" aria-label="Próxima foto">
-            <i data-lucide="chevron-right" class="w-5 h-5"></i>
-        </button>
-        <div class="hero-slider-dots" aria-label="Selecionar foto"></div>
+      <nav class="main-nav" id="nav" aria-label="Navegação principal">
+        <a href="#sobre">A Semear</a>
+        <a href="#terapias">Terapias</a>
+        <a href="#convenios">Convênios</a>
+        <a href="#estrutura">Estrutura</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="btn btn-sm btn-primary nav-cta js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+na+Cl%C3%ADnica+Semear.&type=phone_number&app_absent=0">Falar com a equipe</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 text-white">
-        <p class="font-display font-bold text-lg">Conheça a Clínica</p>
-        <p class="text-sm opacity-90">Passe as fotos e veja nossa estrutura.</p>
+  <main id="conteudo" tabindex="-1">
+    <section class="hero section">
+      <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span> São Luís · Maranhão</div>
+          <h1>Clínica especializada em <span>autismo e outros transtornos do neurodesenvolvimento</span>.</h1>
+          <p class="lead">Na Clínica Semear, oferecemos atendimento multiprofissional individualizado para pessoas com autismo e outras necessidades do neurodesenvolvimento, reunindo diferentes especialidades para promover comunicação, autonomia, aprendizagem e qualidade de vida, sempre em parceria com a família.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Cl%C3%ADnica+Semear.&type=phone_number&app_absent=0">Agendar uma avaliação</a>
+            <a class="btn btn-secondary" href="#terapias">Conhecer as terapias</a>
+          </div>
+
+          <div class="hero-trust" role="group" aria-label="Informações de confiança">
+            <p>Um espaço para ouvir sua história, acolher suas dúvidas e caminhar com você.</p>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-photo-wrap">
+            <img class="hero-photo" src="assets/estrutura-4-960.webp" srcset="assets/estrutura-4-480.webp 480w, assets/estrutura-4-960.webp 896w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 90vw, 540px" alt="Ambiente da Clínica Semear em São Luís" width="896" height="1195" fetchpriority="high" decoding="async">
+            <div class="hero-card">
+              <span class="hero-card-kicker">Atendimento</span>
+              <strong>Um cuidado que respeita seu tempo</strong>
+              <span>Escuta, acolhimento e atenção em cada etapa.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans-strip" id="convenios" aria-labelledby="titulo-convenios">
+      <div class="container plans-inner">
+        <div class="plans-copy">
+          <span class="section-kicker">Convênios</span>
+          <h2 id="titulo-convenios">Atendemos Unimed, GEAP e Luminar</h2>
+          <p>Tem um desses planos? A gente ajuda você a entender os documentos e os próximos passos. A cobertura e a autorização dependem das regras do seu convênio.</p>
+        </div>
+        <div class="plan-logos" role="group" aria-label="Convênios atendidos">
+          <div class="plan-card"><span class="plan-mark plan-unimed"></span><strong>Unimed</strong></div>
+          <div class="plan-card"><span class="plan-mark plan-geap"></span><strong>GEAP</strong></div>
+          <div class="plan-card"><span class="plan-mark plan-luminar"></span><strong>Luminar</strong></div>
+        </div>
+        <a class="text-link js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+verificar+atendimento+pelo+meu+conv%C3%AAnio.&type=phone_number&app_absent=0">Consultar meu plano →</a>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="section-kicker">A Clínica Semear</span>
+          <h2>Cada pessoa tem seu tempo.<br>Cada história merece atenção.</h2>
+          <p>Aqui, o cuidado começa pela escuta. Conhecemos a história de cada pessoa para construir um acompanhamento que faça sentido para ela e para sua família.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <div class="pillar-number">01</div>
+            <h3>Um olhar para cada pessoa</h3>
+            <p>Queremos conhecer o que você precisa, o que já conquistou e o que faz parte da sua rotina. É a partir dessa escuta que planejamos o cuidado.</p>
+          </article>
+          <article class="pillar-card">
+            <div class="pillar-number">02</div>
+            <h3>Cuidado que faz parte da vida</h3>
+            <p>As pequenas conquistas do dia a dia também importam: se comunicar, aprender, brincar e fazer mais coisas com autonomia.</p>
+          </article>
+          <article class="pillar-card">
+            <div class="pillar-number">03</div>
+            <h3>A família também é acolhida</h3>
+            <p>Você pode perguntar, compartilhar dúvidas e participar. Conversamos sobre cada etapa e sobre como levar o cuidado para a rotina de casa e da escola.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft signs-section" aria-labelledby="titulo-sinais">
+      <div class="container signs-grid">
+        <div>
+          <span class="section-kicker">Desenvolvimento</span>
+          <h2 id="titulo-sinais">Quando buscar orientação?</h2>
+          <p class="muted">Se algo no desenvolvimento preocupa você, vale conversar com um profissional. Você não precisa ter todas as respostas para buscar ajuda. Um sinal isolado não define um diagnóstico: cada história precisa ser ouvida e avaliada com atenção.</p>
+        </div>
+        <div class="sign-list">
+          <div class="sign-item"><span>Fala e comunicação</span><p>Dificuldades para falar, expressar necessidades ou se comunicar com outras pessoas.</p></div>
+          <div class="sign-item"><span>Respostas sensoriais</span><p>Sensibilidade intensa a sons, texturas, cheiros, luzes ou contato físico.</p></div>
+          <div class="sign-item"><span>Emoções e rotina</span><p>Dificuldade para lidar com frustrações ou mudanças nas atividades do dia a dia.</p></div>
+          <div class="sign-item"><span>Autonomia e aprendizagem</span><p>Dificuldades persistentes em atividades do dia a dia, brincadeiras, aprendizagem ou interação.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titulo-como-funciona">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Como funciona</span>
+          <h2 id="titulo-como-funciona">Estamos com você desde o primeiro contato</h2>
+        </div>
+        <ol class="steps-grid">
+          <li><span>1</span><h3>Primeiro contato</h3><p>Conte o que você está buscando. Nossa equipe explica como agendar e quais documentos levar.</p></li>
+          <li><span>2</span><h3>Avaliação</h3><p>O profissional conhece sua história e avalia quais cuidados podem ajudar.</p></li>
+          <li><span>3</span><h3>Planejamento</h3><p>Juntos, definimos os objetivos e organizamos o plano de cuidado.</p></li>
+          <li><span>4</span><h3>Acompanhamento</h3><p>Acompanhamos cada etapa, conversamos sobre os avanços e ajustamos o plano quando necessário.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="terapias">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div>
+            <span class="section-kicker">Terapias</span>
+            <h2>Diferentes especialidades.<br>Um cuidado em comum.</h2>
+          </div>
+          <p>Cada terapia tem seu papel. A avaliação ajuda a identificar quais delas fazem sentido para cada pessoa.</p>
+        </div>
+
+        <div class="therapy-grid">
+          <article class="therapy-card featured"><div class="therapy-badge">ABA</div><h3>Análise do Comportamento (ABA)</h3><p>Um acompanhamento baseado na aprendizagem para desenvolver habilidades de comunicação, autonomia e convivência, respeitando as necessidades de cada pessoa.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">FO</div><h3>Fonoaudiologia</h3><p>Cuidado com a fala, a linguagem, a comunicação e os movimentos da boca e da face, conforme a necessidade de cada pessoa.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">TO</div><h3>Terapia Ocupacional</h3><p>Apoio à autonomia em atividades do dia a dia, como brincar, se vestir e se alimentar.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">IS</div><h3>Integração Sensorial</h3><p>Trabalho com as respostas a estímulos como sons, movimentos e texturas, conforme avaliação do terapeuta ocupacional.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">PP</div><h3>Psicopedagogia</h3><p>Acompanhamento das dificuldades de aprendizagem, respeitando o jeito e o ritmo de aprender de cada pessoa.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">PM</div><h3>Psicomotricidade</h3><p>Atividades que envolvem movimento, coordenação e percepção do próprio corpo e do espaço.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">PSI</div><h3>Psicologia Clínica</h3><p>Um espaço de escuta e cuidado com as emoções, com acompanhamento individual e orientação à família.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">MT</div><h3>Musicoterapia</h3><p>A música como recurso terapêutico para trabalhar a expressão, a comunicação e a interação.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">FIS</div><h3>Fisioterapia</h3><p>Cuidado com os movimentos, o equilíbrio, a postura e a coordenação nas atividades do dia a dia.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">TA</div><h3>Terapia Alimentar</h3><p>Acompanhamento das dificuldades com a alimentação, considerando sensações, movimentos e comportamentos envolvidos nas refeições.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">E+</div><h3>Fono · Eletroestimulação</h3><p>Recurso complementar utilizado por profissional habilitado quando houver indicação clínica.</p></article>
+          <article class="therapy-card"><div class="therapy-badge">RC</div><h3>Recursos complementares</h3><p>Ventosaterapia e auriculoterapia podem ser utilizadas conforme avaliação, indicação profissional e objetivos do acompanhamento.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section-soft" id="estrutura">
+      <div class="container structure-grid">
+        <div class="structure-copy">
+          <span class="section-kicker">Nossa estrutura</span>
+          <h2>Um espaço para se sentir acolhido</h2>
+          <p>Conheça os ambientes da Semear: espaços preparados para as terapias, as atividades e o acolhimento das famílias.</p>
+          <ul class="check-list">
+            <li>Espaços para Integração Sensorial</li>
+            <li>Recursos para atividades de vida diária</li>
+            <li>Materiais terapêuticos e pedagógicos</li>
+            <li>Ambiente de acolhimento para famílias</li>
+          </ul>
+          <a class="text-link js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+conhecer+a+estrutura+da+Cl%C3%ADnica+Semear.&type=phone_number&app_absent=0">Agendar uma visita →</a>
+        </div>
+        <div class="clinic-gallery" role="group" aria-label="Fotos da clínica">
+          <p class="gallery-hint">Um passeio pela Semear. Deslize para conhecer os ambientes.</p>
+          <div class="clinic-track" id="clinic-photos" tabindex="0" role="group" aria-label="Galeria de ambientes; use as setas do teclado para navegar">
+            <figure class="clinic-slide"><img src="assets/galeria/psicologia.webp" alt="Sala de Psicologia" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Sala de Psicologia</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/psicomotricidade-bolinhas.webp" alt="Espaço de brincadeiras e movimento" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Espaço de brincadeiras e movimento</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/psicopedagogia.webp" alt="Sala de Psicopedagogia" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Sala de Psicopedagogia</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/arvore.webp" alt="Um toque de natureza na Semear" width="900" height="1227" loading="lazy" decoding="async"><figcaption>Um toque de natureza na Semear</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/psicomotricidade.webp" alt="Recursos para movimento e equilíbrio" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Recursos para movimento e equilíbrio</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/sala-atividades.webp" alt="Sala de atividades" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Sala de atividades</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/fonoaudiologia.webp" alt="Sala de Fonoaudiologia" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Sala de Fonoaudiologia</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/aba-safari.webp" alt="Materiais e brinquedos do espaço ABA" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Materiais e brinquedos do espaço ABA</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/galeria/corredor.webp" alt="Conheça nossos espaços" width="900" height="1200" loading="lazy" decoding="async"><figcaption>Conheça nossos espaços</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/estrutura-4-960.webp" alt="Ambiente de atendimento da Clínica Semear" width="896" height="1195" loading="lazy" decoding="async"><figcaption>Mais um cantinho da Semear</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/estrutura-2-960.webp" alt="Ambiente de atendimento da Clínica Semear" width="880" height="1206" loading="lazy" decoding="async"><figcaption>Mais um cantinho da Semear</figcaption></figure>
+            <figure class="clinic-slide"><img src="assets/estrutura-3-960.webp" alt="Ambiente de atendimento da Clínica Semear" width="880" height="1206" loading="lazy" decoding="async"><figcaption>Mais um cantinho da Semear</figcaption></figure>
+          </div>
+          <div class="gallery-controls" hidden>
+            <button type="button" class="gallery-prev" aria-label="Foto anterior" aria-controls="clinic-photos">←</button>
+            <span class="gallery-count" aria-live="polite" aria-atomic="true">1 de 12</span>
+            <button type="button" class="gallery-next" aria-label="Próxima foto" aria-controls="clinic-photos">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-intro">
+          <span class="section-kicker">Dúvidas frequentes</span>
+          <h2>Vamos tirar suas dúvidas?</h2>
+          <p>Se sua dúvida não estiver aqui, fale com nossa equipe pelo WhatsApp.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Como funciona o primeiro atendimento?</summary>
+            <p>No primeiro contato, ouvimos o que você está buscando e explicamos as opções de atendimento. Depois, orientamos sobre os documentos e o agendamento da avaliação.</p>
+          </details>
+          <details>
+            <summary>A Clínica Semear atende convênios?</summary>
+            <p>Sim. Atualmente atendemos Unimed, GEAP e Luminar. Nos convênios, os atendimentos da clínica são direcionados ao diagnóstico de TEA, conforme regras de cobertura, elegibilidade e autorização de cada plano. Nossa equipe orienta sobre encaminhamento, documentação e carteira do convênio.</p>
+          </details>
+          <details>
+            <summary>Também há atendimento particular?</summary>
+            <p>Sim. No atendimento particular não é exigido CID para solicitar avaliação ou acompanhamento. A indicação da especialidade e do plano terapêutico é definida conforme a demanda apresentada e a avaliação profissional. Fale com a equipe para conhecer disponibilidade e valores.</p>
+          </details>
+          <details>
+            <summary>Quem pode ser atendido?</summary>
+            <p>Nos atendimentos particulares, a clínica pode avaliar crianças, adolescentes e adultos conforme a especialidade e a demanda apresentada. Nos convênios, a elegibilidade segue as regras de cada plano e a documentação clínica exigida.</p>
+          </details>
+          <details>
+            <summary>Quais documentos são necessários para atendimento pelo plano?</summary>
+            <p>Os requisitos variam conforme o convênio. Em geral, solicitamos encaminhamento ou solicitação médica com CID e quantidade de terapias quando exigidos pelo plano, além da documentação e da carteira do beneficiário. Nossa equipe confirma os requisitos antes do agendamento.</p>
+          </details>
+          <details>
+            <summary>Como é definida a frequência das terapias?</summary>
+            <p>A frequência depende da avaliação profissional, dos objetivos terapêuticos, da indicação clínica e, quando houver convênio, das autorizações disponibilizadas pelo plano.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="section-kicker light">Contato</span>
+          <h2>O primeiro passo pode ser uma conversa.</h2>
+          <p>Estamos aqui para ouvir você e explicar como funciona o atendimento. Fale com a equipe sobre avaliações, convênios e horários.</p>
+          <a class="btn btn-light js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+na+Cl%C3%ADnica+Semear.&type=phone_number&app_absent=0">Falar pelo WhatsApp</a>
+        </div>
+        <address class="contact-card">
+          <div><span>Endereço</span><strong>Av. Existente, nº 3, Letra B, Quadra 10, Lote 3</strong><p>Jardim das Margaridas · próximo ao Cohatrac<br>São Luís - MA · CEP 65052-866</p></div>
+          <div><span>Telefones</span><a href="tel:+5598992171235">(98)&nbsp;99217&#8209;1235</a><p><a href="tel:+5598999918289">(98)&nbsp;99991&#8209;8289</a></p></div>
+          <div><span>E-mail</span><a href="mailto:clinicamultisemear@gmail.com">clinicamultisemear@gmail.com</a></div>
+          <div><span>Instagram</span><a href="https://www.instagram.com/clinicamultsemear/" target="_blank" rel="noopener">@clinicamultsemear</a></div>
+          <div><span>Horário</span><strong>Segunda a sexta</strong><p>Atendimentos nos turnos da manhã e da tarde. Confirme o horário com a equipe.</p></div>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-semear-160.png" alt="Clínica Semear" width="80" height="80" loading="lazy"><strong>Clínica Semear</strong>
+        <p>Acolhimento e cuidado com o desenvolvimento, perto de você e da sua família, em São Luís.</p>
+      </div>
+      <div><h2>Clínica</h2><a href="#sobre">A Semear</a><a href="#terapias">Terapias</a><a href="#estrutura">Estrutura</a></div>
+      <div><h2>Atendimento</h2><a href="#convenios">Convênios</a><a href="#faq">Dúvidas frequentes</a><a href="#contato">Contato</a><a href="/politica-de-privacidade.html">Privacidade</a><button type="button" class="cookie-settings" hidden>Preferências de cookies</button><a class="js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+a+Cl%C3%ADnica+Semear.&type=phone_number&app_absent=0">WhatsApp</a></div>
     </div>
-</div>
+    <div class="container footer-bottom">
+      <span>© 2026 Clínica Multiespecialidades Semear Ltda. Todos os direitos reservados.</span>
+    </div>
+  </footer>
 
-                    <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce-slow">
-                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
-                            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-900">Equipe Expert</p>
-                            <p class="text-xs text-gray-500">Multidisciplinar</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="cookie-banner" id="cookie-banner" aria-label="Preferências de privacidade" tabindex="-1" hidden>
+    <div><strong>Privacidade e cookies</strong><p>Usamos tecnologias de medição para entender o desempenho do site e das campanhas. Você pode aceitar ou recusar cookies não essenciais. <a href="/politica-de-privacidade.html">Saiba mais</a>.</p></div>
+    <div class="cookie-actions"><button type="button" class="cookie-reject" id="cookie-reject">Recusar</button><button type="button" class="cookie-accept" id="cookie-accept">Aceitar</button></div>
+  </section>
 
-    <!-- Why Us / Intro Section -->
-    <section id="sobre" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="font-display text-3xl font-bold mb-6 text-gray-900">Cada criança tem seu tempo. Nós ajudamos no caminho.</h2>
-            <p class="text-gray-600 text-lg leading-relaxed mb-12">
-                Ser pai ou mãe de uma criança autista traz dúvidas, medos e muitas incertezas.  Na Clínica Semear, você encontra acolhimento, orientação e um plano claro de evolução.  Aqui, não tratamos apenas comportamentos. Trabalhamos para desenvolver comunicação, autonomia e interação social, respeitando o tempo e a individualidade de cada criança.  Você não está sozinho nessa jornada.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl bg-brand-bg border border-gray-100 hover:shadow-lg transition-all">
-                    <div class="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue mx-auto mb-4">
-                        <i data-lucide="heart-handshake"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Acolhimento e Orientação aos Pais</h3>
-                    <p class="text-sm text-gray-600">Você não está sozinho: acolhemos, orientamos e alinhamos estratégias para casa e escola.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-brand-bg border border-gray-100 hover:shadow-lg transition-all">
-                    <div class="w-12 h-12 bg-brand-red/10 rounded-full flex items-center justify-center text-brand-red mx-auto mb-4">
-                        <i data-lucide="brain-circuit"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Intervenção Baseada em Evidências</h3>
-                    <p class="text-sm text-gray-600">Aplicamos ABA e outras terapias com objetivos claros, registros de evolução e ajustes contínuos.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-brand-bg border border-gray-100 hover:shadow-lg transition-all">
-                    <div class="w-12 h-12 bg-brand-yellow/10 rounded-full flex items-center justify-center text-brand-yellow mx-auto mb-4">
-                        <i data-lucide="smile"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Um Espaço Seguro para Crescer e Seguro</h3>
-                    <p class="text-sm text-gray-600">Salas adaptadas para reduzir o estresse sensorial e aumentar o engajamento nas atividades.</p>
-                </div>
-            </div>
-        </div>
-    
-</section>
+  <a class="floating-whatsapp js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+a+Cl%C3%ADnica+Semear.&type=phone_number&app_absent=0" aria-label="Falar com a Clínica Semear pelo WhatsApp">WhatsApp</a>
 
-    <!-- Authority / Trust Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="bg-brand-bg border border-gray-100 rounded-3xl p-8 md:p-10">
-                <div class="flex flex-col lg:flex-row gap-10 items-start lg:items-center justify-between">
-                    <div class="lg:w-2/3">
-                        <span class="text-brand-blue font-semibold tracking-wider text-sm uppercase">Confiança e Segurança</span>
-                        <h2 class="font-display text-2xl md:text-3xl font-bold mt-2 text-gray-900">Por que confiar na Clínica Semear?</h2>
-                        <p class="text-gray-600 mt-4 leading-relaxed">
-                            Somos uma clínica <span class="font-semibold">exclusiva para crianças e adolescentes autistas (3 a 20 anos)</span>,
-                            com abordagem baseada em evidências, acolhimento familiar e um Plano Terapêutico Singular (PTS) para cada criança.
-                        </p>
-                    </div>
-                    <a href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0"
-onclick="return gtag_report_conversion('https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0');"
-class="bg-brand-green hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-green-200 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
-    <i data-lucide="message-circle"></i>
-    Agendar Avaliação
-</a>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6 mt-10">
-                    <div class="bg-white rounded-2xl border border-gray-100 p-6">
-                        <div class="flex items-center gap-3">
-                            <div class="w-11 h-11 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center">
-                                <i data-lucide="badge-check"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-gray-900">CNES</p>
-                                <p class="text-sm text-gray-600">Cadastro Nacional: <span class="font-semibold">2949873</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl border border-gray-100 p-6">
-                        <div class="flex items-center gap-3">
-                            <div class="w-11 h-11 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center">
-                                <i data-lucide="users"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-gray-900">Equipe Multidisciplinar</p>
-                                <p class="text-sm text-gray-600">Análise do Comportamento (ABA), Fonoaudiologia, Terapia Ocupacional, Integração Sensorial, Psicopedagogia e mais</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl border border-gray-100 p-6">
-                        <div class="flex items-center gap-3">
-                            <div class="w-11 h-11 rounded-xl bg-brand-yellow/10 text-brand-yellow flex items-center justify-center">
-                                <i data-lucide="map-pin"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-gray-900">São Luís - MA</p>
-                                <p class="text-sm text-gray-600">Jardim das Margaridas (próximo ao Cohatrac)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Therapies Grid -->
-
-    <section id="terapias" class="py-20 bg-brand-bg">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-16">
-                <span class="text-brand-blue font-semibold tracking-wider text-sm uppercase">Nossos Serviços</span>
-                <h2 class="font-display text-3xl md:text-4xl font-bold mt-2 text-gray-900">Abordagem Multidisciplinar Integrada</h2>
-                <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-                    Um plano completo, com terapias integradas e <strong>Plano Terapêutico Singular (PTS)</strong>, respeitando o tempo e a individualidade de cada criança.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="therapies-grid">
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-brand-red/10 text-brand-red rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="mic" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Fonoaudiologia</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Estímulo da fala, linguagem, comunicação alternativa e tratamento de distúrbios de deglutição.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-brand-blue/10 text-brand-blue rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="zap" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Fono - Eletroestimulação</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Recurso terapêutico complementar para potencializar respostas motoras orais e apoiar a evolução da comunicação, conforme indicação profissional.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-brand-yellow/10 text-brand-yellow rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="puzzle" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Terapia Ocupacional</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Desenvolvimento de autonomia nas atividades diárias (comer, vestir) e integração sensorial.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="dumbbell" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Fisioterapia</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Trabalho motor para equilíbrio, coordenação, postura e funcionalidade, respeitando o desenvolvimento de cada criança.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-brand-green/10 text-brand-green rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="sparkles" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Integração Sensorial</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Ajuda a criança a processar e responder adequadamente a estímulos sensoriais do ambiente.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-purple-100 text-purple-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="book-open" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Psicopedagogia</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Identificação e tratamento de dificuldades de aprendizagem, auxiliando no processo escolar.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-orange-100 text-orange-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="activity" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Psicomotricidade</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Trabalha o corpo, movimento e afetividade, melhorando coordenação e noção espacial.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-pink-100 text-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="music" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Musicoterapia</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Uso da música para facilitar a comunicação, expressão e interação social.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-red-100 text-red-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="apple" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Terapia Alimentar</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Abordagem para seletividade alimentar, muito comum no autismo, tornando a alimentação prazerosa.</p>
-        </div>
-<div class="therapy-card bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md h-full flex flex-col items-start group">
-            <div class="w-14 h-14 bg-teal-100 text-teal-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i data-lucide="users" class="w-7 h-7"></i>
-            </div>
-            <h3 class="font-display font-bold text-xl text-gray-900 mb-2">Psicoterapia</h3>
-            <p class="text-gray-600 text-sm leading-relaxed flex-grow">Suporte emocional para crianças e adolescentes, além de orientação parental.</p>
-        </div>
-</div>
-        </div>
-    </section>
-
-    <!-- Team & Structure Section -->
-    <section id="equipe" class="py-20 bg-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <div class="lg:w-1/2">
-                    <span class="text-brand-green font-semibold tracking-wider text-sm uppercase">Nossa Estrutura</span>
-                    <h2 class="font-display text-3xl md:text-4xl font-bold mt-2 mb-6 text-gray-900">Um Espaço Pensado para o Desenvolvimento</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Nossas salas são equipadas com recursos sensoriais e pedagógicos de ponta. Cada detalhe da Clínica Semear foi projetado para minimizar o estresse sensorial e maximizar o engajamento da criança nas atividades.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="text-brand-green w-5 h-5"></i>
-                            <span class="text-gray-700">Salas de Integração Sensorial</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="text-brand-green w-5 h-5"></i>
-                            <span class="text-gray-700">Espaço de Atividades de Vida Diária (AVD)</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="text-brand-green w-5 h-5"></i>
-                            <span class="text-gray-700">Área de convivência para pais</span>
-                        </li>
-                    </ul>
-                   <a href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0"
-onclick="return gtag_report_conversion('https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0');"
-class="text-brand-blue font-semibold hover:text-blue-700 flex items-center gap-2 group">
-    Agendar visita para conhecer
-    <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
-</a>
-                </div>
-                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
-                    <img src="estrutura-1.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover transform translate-y-8" alt="Sala de terapia">
-                    <img src="estrutura-2.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover" alt="Brinquedos educativos">
-                    <img src="estrutura-3.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover" alt="Criança brincando">
-                    <img src="estrutura-4.jpg" class="rounded-2xl shadow-lg w-full h-48 object-cover transform translate-y-8" alt="Consultório">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-20 bg-brand-blue/5">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <h2 class="font-display text-3xl font-bold text-center mb-12 text-gray-900">O Que os Pais Dizem</h2>
-            <div class="grid md:grid-cols-3 gap-8" id="testimonials-grid">
-                <!-- Content injected via JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 class="font-display text-3xl font-bold text-center mb-4 text-gray-900">Dúvidas Frequentes</h2>
-            <p class="text-center text-gray-500 mb-12">Respostas para as perguntas mais comuns dos pais.</p>
-            
-            <div class="space-y-4" id="faq-container">
-                <!-- Content injected via JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="py-20 bg-brand-blue relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">Pronto para dar o próximo passo?</h2>
-            <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
-                Agende uma avaliação inicial e descubra como a Clínica Semear pode ajudar no desenvolvimento do seu filho. Estamos ansiosos para conhecer sua família.
-            </p>
-         <a href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0"
-onclick="return gtag_report_conversion('https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+atendimento+para+autismo.&type=phone_number&app_absent=0');"
-class="bg-white text-brand-blue hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl shadow-xl transition-all inline-flex items-center gap-3 transform hover:scale-105">
-    <i data-lucide="whatsapp" class="w-6 h-6"></i>
-    Falar com Atendente
-</a>
-            <p class="mt-6 text-blue-200 text-sm">
-                Atendimento de Segunda a Sábado, das 08h às 19h.
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-8">
-            <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center gap-3 mb-4">
-                    <img src="logo-semear.png"
-                         alt="Clínica Multiespecialidades Semear"
-                         class="h-10 w-auto object-contain">
-                    <span class="font-display font-bold text-xl">Clínica Semear</span>
-                </div>
-                <p class="text-gray-400 text-sm leading-relaxed max-w-md">
-                    Clínica exclusiva para crianças autistas (3 a 20 anos) em São Luís. Nossa missão é semear desenvolvimento e colher autonomia, com ciência e acolhimento familiar.
-                </p>
-                <div class="flex gap-4 mt-6">
-                    <a href="https://instagram.com/clinicamultsemear" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
-                    <a href="mailto:clinicamultisemear@gmail.com" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="mail"></i></a>
-                </div>
-            </div>
-            
-            <div>
-                <h4 class="font-bold mb-4 text-gray-200">Links Rápidos</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="#sobre" class="hover:text-brand-blue transition-colors">Sobre Nós</a></li>
-                    <li><a href="#terapias" class="hover:text-brand-blue transition-colors">Terapias</a></li>
-                    <li><a href="#equipe" class="hover:text-brand-blue transition-colors">Corpo Clínico</a></li>
-                    <li><a href="#faq" class="hover:text-brand-blue transition-colors">Perguntas Frequentes</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-bold mb-4 text-gray-200">Contato</h4>
-                <ul class="space-y-3 text-sm text-gray-400">
-                    <li class="flex items-start gap-3">
-                        <i data-lucide="map-pin" class="w-5 h-5 text-brand-blue shrink-0"></i>
-                        <span>Av. Existente, nº 3, Letra B, Quadra 10, Lote 3, Jardim das Margaridas (próximo ao Cohatrac)<br>São Luís - MA, CEP 65052-866</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="phone" class="w-5 h-5 text-brand-blue shrink-0"></i>
-                        <span>(98) 99217-1235 / (98) 99991-8289</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="mail" class="w-5 h-5 text-brand-blue shrink-0"></i>
-                        <span>clinicamultisemear@gmail.com</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-12 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-            &copy; 2026 CLINICA MULTIESPECIALIDADES SEMEAR LTDA. Todos os direitos reservados.
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script defer src="seo_config.js"></script>
-    <script defer src="data.js"></script>
-    <script defer src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
