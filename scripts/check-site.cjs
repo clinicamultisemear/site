@@ -63,6 +63,16 @@ const base = process.env.SITE_URL || 'http://127.0.0.1:8765';
         assert.ok(link.tracked);
       }
     }
+    await page.locator('.clinic-track').scrollIntoViewIfNeeded();
+    await page.locator('.clinic-track').evaluate(el => el.scrollTo({left:0, behavior:'instant'}));
+    await page.waitForFunction(() => document.querySelector('.gallery-count').textContent === '1 de 12');
+    await page.locator('.gallery-next').click();
+    await page.waitForFunction(() => document.querySelector('.gallery-count').textContent === '2 de 12');
+    await page.locator('.clinic-track').focus();
+    await page.keyboard.press('ArrowLeft');
+    await page.waitForFunction(() => document.querySelector('.gallery-count').textContent === '1 de 12');
+    assert.equal(await page.locator('.gallery-prev').isDisabled(), true);
+    assert.equal(await page.locator('.clinic-slide').count(), 12);
     // Exercise the actual callback and fallback locally without contacting WhatsApp or Ads.
     await page.evaluate(() => gtag_report_conversion('#callback-test'));
     const conversion = await page.evaluate(() => {

@@ -79,6 +79,38 @@
   if (cookieAccept) cookieAccept.addEventListener('click', () => setConsent(true));
   if (cookieReject) cookieReject.addEventListener('click', () => setConsent(false));
 
+  const track = document.querySelector('.clinic-track');
+  if (track) {
+    const gallery = track.closest('.clinic-gallery');
+    const slides = Array.from(track.children);
+    const prev = gallery.querySelector('.gallery-prev');
+    const next = gallery.querySelector('.gallery-next');
+    const count = gallery.querySelector('.gallery-count');
+    gallery.querySelector('.gallery-controls').hidden = false;
+    const index = () => Math.round(track.scrollLeft / (track.clientWidth + 16));
+    const update = () => {
+      const current = Math.max(0, Math.min(slides.length - 1, index()));
+      count.textContent = `${current + 1} de ${slides.length}`;
+      prev.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+    };
+    const move = (step) => track.scrollTo({
+      left: Math.max(0, Math.min(slides.length - 1, index() + step)) * (track.clientWidth + 16),
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+    });
+    prev.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    track.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1);
+      }
+    });
+    let frame;
+    track.addEventListener('scroll', () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   window.addEventListener('scroll', syncHeader, { passive: true });
   syncHeader();
 })();
