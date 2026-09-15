@@ -296,8 +296,8 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
 }
 
 /* Refinamento visual: formas suaves, títulos mais leves e hierarquia das terapias. */
-:root { --ink: #203649; --soft: #f5f8fa; --soft-pink: #fff1f5; --radius: 28px; }
-.hero { min-height: 760px; background: linear-gradient(115deg, #fff8f5 0%, #fff 52%, #eef8f9 100%); }
+:root { --ink: #203649; --soft: #f7f9fc; --soft-pink: #fff1f5; --radius: 28px; }
+.hero { min-height: 760px; background: linear-gradient(115deg, #fff 0%, #fff8fb 52%, #f3f8fc 100%); }
 .hero-grid { gap: 64px; }
 .hero h1 { font-size: clamp(46px, 4.7vw, 68px); line-height: 1.09; letter-spacing: -.045em; font-weight: 750; }
 .hero h1 span { color: #bd2258; }
@@ -317,16 +317,16 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
 .plan-card { background: #f8fafb; box-shadow: none; border-color: #e8eef1; }
 .pillar-card { border: 0; background: #fff6f8; box-shadow: none; padding: 34px; }
 .pillar-card:nth-child(2) { background: #eff7fb; }
-.pillar-card:nth-child(3) { background: #f5f7ef; }
+.pillar-card:nth-child(3) { background: #f7f9fc; }
 .pillar-number { background: #fff; border-radius: 50%; }
 .pillar-card h3 { margin-top: 22px; }
-.signs-section { background: #f0f7f8; }
+.signs-section { background: linear-gradient(180deg, #fff, #f7f9fc 35%, #f7f9fc 70%, #fff); }
 .sign-item { border: 0; }
 .steps-grid li { border-top-width: 2px; }
 .steps-grid li > span { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #f5f1f3; color: #a92854; }
-#terapias { background: #faf7f5; }
+#terapias { background: linear-gradient(180deg, #fff, #fff8fb 20%, #fff8fb 85%, #fff); }
 .therapy-grid { gap: 18px; }
-.therapy-card { min-height: 235px; padding: 30px; border-color: #eee7e4; border-radius: 24px; }
+.therapy-card { min-height: 235px; padding: 30px; border-color: #e9eaf0; border-radius: 24px; }
 .therapy-card h3 { font-size: 20px; font-weight: 700; }
 .therapy-card p { font-size: 15px; line-height: 1.75; }
 .therapy-badge { border-radius: 50%; width: 46px; height: 46px; }
@@ -334,10 +334,10 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
 .therapy-card.featured h3, .therapy-card.featured p { margin: 0; }
 .therapy-card.featured .therapy-badge { width: 60px; height: 60px; background: #bd2258; color: #fff; }
 .therapy-card:last-child { grid-column: span 2; }
-.team-group { border: 0; border-left: 3px solid #e6bfd0; border-radius: 0 20px 20px 0; background: #faf8f9; padding: 26px; }
+.team-group { border: 0; border-left: 3px solid #e6bfd0; border-radius: 0 20px 20px 0; background: #fff8fb; padding: 26px; }
 .team-group:nth-child(even) { border-left-color: #c0dce6; background: #f5f9fb; }
 .team-group p { line-height: 1.9; }
-.contact-section { background: #234e68; position: relative; }
+.contact-section { background: #285b7a; position: relative; }
 .contact-copy h2 { max-width: 490px; }
 .contact-card { box-shadow: none; }
 @media (max-width: 1080px) {
@@ -368,3 +368,14 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
   .plan-mark { width: 7px; height: 7px; flex-shrink: 0; }
   .therapy-card { min-height: 0; padding: 25px; }
 }
+
+/* Uma paleta contínua e uma abertura com menos informação institucional. */
+.hero-trust { display: block; max-width: 440px; margin-top: 25px; }
+.hero-trust p { margin: 0; padding-left: 18px; border-left: 2px solid #e4b4c8; color: #59697a; font-size: 15px; line-height: 1.75; }
+.pillar-card, .pillar-card:nth-child(2), .pillar-card:nth-child(3) { background: #fff; border: 1px solid #e9eaf0; }
+.pillar-number { background: #fff1f6; }
+.section { padding-block: 84px; }
+.hero { padding-top: 150px; }
+#estrutura { background: linear-gradient(180deg, #fff, #f7f9fc 25%, #f7f9fc 75%, #fff); }
+.plans-strip { border-top: 0; border-bottom-color: #edf0f4; }
+@media (max-width: 600px) { .section { padding-block: 56px; } .hero { padding-top: 112px; } }
