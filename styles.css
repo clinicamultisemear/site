@@ -425,8 +425,9 @@ h1, h2, h3, p, figcaption, summary, .btn, .contact-card, .check-list { overflow-
 .plan-logos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; width: 100%; }
 .plan-card { min-width: 0; height: 76px; padding: 12px; background: #fff; border: 1px solid #e8eef1; border-radius: 14px; }
 .plan-card img { width: 100%; max-width: 120px; height: 48px; object-fit: contain; }
-.plan-luminar { background: #154e8c; }
-.plan-luminar img { border-radius: 4px; }
+.plan-luminar { background: #fff; }
+/* Apresentação monocromática: marca escura sobre branco, preservando o arquivo original. */
+.plan-luminar img { filter: grayscale(1) invert(1) contrast(5); mix-blend-mode: multiply; transform: scale(1.25); }
 @media (max-width: 1080px) {
   .plans-inner { grid-template-columns: minmax(0, 1fr); }
   .plan-logos { max-width: 600px; }
