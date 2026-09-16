@@ -82,16 +82,62 @@
   const heroOptions = document.querySelector('.hero-photo-options');
   const heroPhoto = document.querySelector('#hero-photo');
   if (heroOptions && heroPhoto) {
+    const media = heroPhoto.closest('.hero-media');
+    const controls = media.querySelector('.hero-carousel-controls');
+    const options = Array.from(heroOptions.querySelectorAll('button'));
+    const pause = controls.querySelector('.hero-pause');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let current = 0;
+    let paused = reduced.matches;
+    let timer;
+    let revision = 0;
     heroOptions.hidden = false;
-    heroOptions.querySelectorAll('button').forEach((button) => {
-      button.addEventListener('click', () => {
-        heroPhoto.src = button.dataset.photo;
-        heroPhoto.alt = button.dataset.alt;
-        heroOptions.querySelectorAll('button').forEach((option) => {
-          option.setAttribute('aria-pressed', String(option === button));
-        });
-      });
-    });
+    controls.hidden = false;
+    // Preload the three small, optimized photographs for a smooth change.
+    options.forEach(option => { const photo = new Image(); photo.src = option.dataset.photo; });
+    const show = async (index) => {
+      current = (index + options.length) % options.length;
+      const selected = options[current];
+      const version = ++revision;
+      options.forEach(option => option.setAttribute('aria-pressed', String(option === selected)));
+      controls.querySelector('.hero-count').textContent = `${current + 1} de ${options.length}`;
+      if (!reduced.matches) {
+        await heroPhoto.animate([{opacity: 1}, {opacity: 0}], {duration: 180, fill: 'forwards'}).finished;
+      }
+      if (version !== revision) return;
+      heroPhoto.src = selected.dataset.photo;
+      heroPhoto.alt = selected.dataset.alt;
+      try { await heroPhoto.decode(); } catch (_) {}
+      if (version !== revision) return;
+      heroPhoto.getAnimations().forEach(animation => animation.cancel());
+      if (!reduced.matches) heroPhoto.animate([{opacity: 0}, {opacity: 1}], {duration: 350});
+    };
+    const stop = () => clearInterval(timer);
+    const start = () => {
+      stop();
+      pause.textContent = paused ? 'Reproduzir fotos' : 'Pausar fotos';
+      if (!paused && !document.hidden && !media.matches(':hover') && !media.contains(document.activeElement)) {
+        timer = setInterval(() => show(current + 1), 5000);
+      }
+    };
+    options.forEach((option, index) => option.addEventListener('click', () => show(index)));
+    controls.querySelector('.hero-prev').addEventListener('click', () => show(current - 1));
+    controls.querySelector('.hero-next').addEventListener('click', () => show(current + 1));
+    pause.addEventListener('click', () => { paused = !paused; start(); });
+    media.addEventListener('mouseenter', stop);
+    media.addEventListener('mouseleave', start);
+    media.addEventListener('focusin', stop);
+    media.addEventListener('focusout', () => setTimeout(start, 0));
+    document.addEventListener('visibilitychange', start);
+    reduced.addEventListener('change', () => { paused = reduced.matches; start(); });
+    let touchX;
+    heroPhoto.addEventListener('touchstart', event => { touchX = event.changedTouches[0].clientX; stop(); }, {passive: true});
+    heroPhoto.addEventListener('touchend', event => {
+      const delta = event.changedTouches[0].clientX - touchX;
+      if (Math.abs(delta) > 45) show(current + (delta < 0 ? 1 : -1));
+      start();
+    }, {passive: true});
+    start();
   }
 
   const track = document.querySelector('.clinic-track');

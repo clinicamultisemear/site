@@ -448,3 +448,10 @@ h1, h2, h3, p, figcaption, summary, .btn, .contact-card, .check-list { overflow-
 .hero-photo-options[hidden] { display: none; }
 .hero-photo-options button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; }
 .hero-photo-options button[aria-pressed="true"] { background: #a92854; border-color: #a92854; color: #fff; }
+
+.hero-carousel-controls { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.hero-carousel-controls[hidden] { display: none; }
+.hero-carousel-controls button { min-width: 44px; min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: #fff; cursor: pointer; font: inherit; }
+.hero-carousel-controls .hero-prev, .hero-carousel-controls .hero-next { font-size: 24px; }
+.hero-carousel-controls .hero-pause { font-size: 12px; }
+.hero-count { font-size: 13px; font-weight: 700; }
