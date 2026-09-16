@@ -53,7 +53,7 @@
   <meta name="geo.placename" content="São Luís">
 
   <title>Clínica Semear | Terapias para TEA e Neurodesenvolvimento em São Luís</title>
-  <meta name="description" content="Clínica multiprofissional em São Luís para TEA e neurodesenvolvimento. ABA, Fonoaudiologia, Terapia Ocupacional, Integração Sensorial, Psicopedagogia e outras terapias. Atendemos Unimed, GEAP e Luminar.">
+  <meta name="description" content="Clínica multiprofissional em São Luís para TEA e neurodesenvolvimento. ABA, Fonoaudiologia, Terapia Ocupacional, Integração Sensorial, Psicopedagogia e outras terapias. Atendemos Unimed Seguros, GEAP, Luminar e Casembrapa.">
   <meta name="keywords" content="clínica autismo São Luís, terapia ABA São Luís, fonoaudiologia autismo São Luís, terapia ocupacional autismo São Luís, integração sensorial São Luís, psicopedagogia São Luís, Clínica Semear">
 
   <meta property="og:type" content="website">
@@ -144,12 +144,23 @@
 
         <div class="hero-media">
           <div class="hero-photo-wrap">
-            <img class="hero-photo" src="assets/estrutura-4-960.webp" srcset="assets/estrutura-4-480.webp 480w, assets/estrutura-4-960.webp 896w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 90vw, 540px" alt="Ambiente da Clínica Semear em São Luís" width="896" height="1195" fetchpriority="high" decoding="async">
+            <img class="hero-photo" id="hero-photo" src="assets/galeria/psicomotricidade.webp" alt="Sala de psicomotricidade com balanços e recursos para movimento" width="900" height="1200" fetchpriority="high" decoding="async">
             <div class="hero-card">
               <span class="hero-card-kicker">Atendimento</span>
               <strong>Um cuidado que respeita seu tempo</strong>
               <span>Escuta, acolhimento e atenção em cada etapa.</span>
             </div>
+          </div>
+          <div class="hero-carousel-controls" hidden>
+            <button type="button" class="hero-prev" aria-label="Foto anterior do início">←</button>
+            <span class="hero-count">1 de 3</span>
+            <button type="button" class="hero-next" aria-label="Próxima foto do início">→</button>
+            <button type="button" class="hero-pause">Pausar fotos</button>
+          </div>
+          <div class="hero-photo-options" role="group" aria-label="Escolher foto da clínica" hidden>
+            <button type="button" aria-pressed="true" aria-controls="hero-photo" data-photo="assets/galeria/psicomotricidade.webp" data-alt="Sala de psicomotricidade com balanços e recursos para movimento">Movimento</button>
+            <button type="button" aria-pressed="false" aria-controls="hero-photo" data-photo="assets/galeria/psicomotricidade-bolinhas.webp" data-alt="Sala com piscina de bolinhas e materiais para atividades">Brincadeiras</button>
+            <button type="button" aria-pressed="false" aria-controls="hero-photo" data-photo="assets/galeria/corredor.webp" data-alt="Corredor da clínica com acesso às salas de atendimento">Nossos espaços</button>
           </div>
         </div>
       </div>
@@ -159,15 +170,23 @@
       <div class="container plans-inner">
         <div class="plans-copy">
           <span class="section-kicker">Convênios</span>
-          <h2 id="titulo-convenios">Atendemos Unimed, GEAP e Luminar</h2>
+          <h2 id="titulo-convenios">Atendemos Unimed Seguros, GEAP, Luminar e Casembrapa</h2>
           <p>Tem um desses planos? A gente ajuda você a entender os documentos e os próximos passos. A cobertura e a autorização dependem das regras do seu convênio.</p>
         </div>
         <div class="plan-logos" role="group" aria-label="Convênios atendidos">
-          <div class="plan-card"><span class="plan-mark plan-unimed"></span><strong>Unimed</strong></div>
-          <div class="plan-card"><span class="plan-mark plan-geap"></span><strong>GEAP</strong></div>
-          <div class="plan-card"><span class="plan-mark plan-luminar"></span><strong>Luminar</strong></div>
+          <div class="plan-card plan-unimed"><img src="assets/convenios/unimed.webp" alt="Unimed Seguros" width="120" height="48" loading="lazy" decoding="async"></div>
+          <div class="plan-card plan-geap"><img src="assets/convenios/geap.webp" alt="GEAP Saúde" width="120" height="48" loading="lazy" decoding="async"></div>
+          <div class="plan-card plan-luminar"><img src="assets/convenios/luminar.webp" alt="Luminar Saúde" width="120" height="48" loading="lazy" decoding="async"></div>
+          <div class="plan-card plan-casembrapa"><img src="assets/convenios/casembrapa.webp" alt="Casembrapa" width="120" height="48" loading="lazy" decoding="async"></div>
         </div>
         <a class="text-link js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&text=Ol%C3%A1%2C+gostaria+de+verificar+atendimento+pelo+meu+conv%C3%AAnio.&type=phone_number&app_absent=0">Consultar meu plano →</a>
+        <div class="private-care">
+          <div>
+            <h3>Também atendemos particular</h3>
+            <p>Conte o que você precisa. Nossa equipe explica as opções de atendimento e os valores.</p>
+          </div>
+          <a class="btn btn-primary js-whatsapp" href="https://api.whatsapp.com/send/?phone=5598999918289&amp;text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20atendimento%20particular%20na%20Cl%C3%ADnica%20Semear.&amp;type=phone_number&amp;app_absent=0">Solicitar orçamento</a>
+        </div>
       </div>
     </section>
 
@@ -311,7 +330,7 @@
           </details>
           <details>
             <summary>A Clínica Semear atende convênios?</summary>
-            <p>Sim. Atualmente atendemos Unimed, GEAP e Luminar. Nos convênios, os atendimentos da clínica são direcionados ao diagnóstico de TEA, conforme regras de cobertura, elegibilidade e autorização de cada plano. Nossa equipe orienta sobre encaminhamento, documentação e carteira do convênio.</p>
+            <p>Sim. Atualmente atendemos Unimed Seguros, GEAP, Luminar e Casembrapa. Nos convênios, os atendimentos da clínica são direcionados ao diagnóstico de TEA, conforme regras de cobertura, elegibilidade e autorização de cada plano. Nossa equipe orienta sobre encaminhamento, documentação e carteira do convênio.</p>
           </details>
           <details>
             <summary>Também há atendimento particular?</summary>
