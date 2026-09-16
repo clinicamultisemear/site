@@ -79,6 +79,21 @@
   if (cookieAccept) cookieAccept.addEventListener('click', () => setConsent(true));
   if (cookieReject) cookieReject.addEventListener('click', () => setConsent(false));
 
+  const heroOptions = document.querySelector('.hero-photo-options');
+  const heroPhoto = document.querySelector('#hero-photo');
+  if (heroOptions && heroPhoto) {
+    heroOptions.hidden = false;
+    heroOptions.querySelectorAll('button').forEach((button) => {
+      button.addEventListener('click', () => {
+        heroPhoto.src = button.dataset.photo;
+        heroPhoto.alt = button.dataset.alt;
+        heroOptions.querySelectorAll('button').forEach((option) => {
+          option.setAttribute('aria-pressed', String(option === button));
+        });
+      });
+    });
+  }
+
   const track = document.querySelector('.clinic-track');
   if (track) {
     const gallery = track.closest('.clinic-gallery');
