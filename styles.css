@@ -58,6 +58,8 @@ button, input, textarea, select { font: inherit; }
 .btn-primary:hover { box-shadow: 0 16px 32px rgba(232,62,120,.3); }
 .btn-secondary { color: var(--ink); background: #fff; border-color: var(--line); }
 .btn-secondary:hover { border-color: #ccd3de; box-shadow: var(--shadow-soft); }
+.btn-instagram { gap: 10px; }
+.btn-instagram svg { flex-shrink: 0; }
 .btn-light { background: #fff; color: var(--blue-dark); }
 .text-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 750; color: var(--blue-dark); }
 .text-link:hover { color: var(--pink-dark); }
