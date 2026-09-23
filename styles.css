@@ -58,13 +58,15 @@ button, input, textarea, select { font: inherit; }
 .btn-primary:hover { box-shadow: 0 16px 32px rgba(232,62,120,.3); }
 .btn-secondary { color: var(--ink); background: #fff; border-color: var(--line); }
 .btn-secondary:hover { border-color: #ccd3de; box-shadow: var(--shadow-soft); }
+.btn-instagram { gap: 10px; }
+.btn-instagram svg { flex-shrink: 0; }
 .btn-light { background: #fff; color: var(--blue-dark); }
 .text-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 750; color: var(--blue-dark); }
 .text-link:hover { color: var(--pink-dark); }
 
 .hero { min-height: 820px; padding-top: 176px; display: flex; align-items: center; overflow: hidden; background: linear-gradient(180deg, #fff 0%, #fbfcff 100%); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); gap: 76px; align-items: center; }
-.hero-copy { position: relative; z-index: 2; }
+.hero-copy { position: relative; z-index: 2; min-width: 0; }
 .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 800; color: var(--blue-dark); background: #edf5ff; padding: 10px 14px; border-radius: 999px; }
 .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 0 5px rgba(232,62,120,.12); }
 .hero h1 { margin: 24px 0 22px; max-width: 760px; font-size: clamp(46px, 5.3vw, 76px); line-height: .98; letter-spacing: -.052em; font-weight: 850; }
@@ -225,7 +227,7 @@ details p { margin: -4px 52px 24px 0; color: var(--muted); line-height: 1.72; fo
   .main-nav > a:not(.btn)::after { display: none; }
   .nav-cta { margin-top: 8px; }
   .hero { min-height: auto; padding-top: 130px; padding-bottom: 74px; }
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { font-size: clamp(44px, 13vw, 66px); }
   .lead { font-size: 18px; }
   .hero-photo { height: 430px; }
@@ -353,7 +355,7 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
   .therapy-card:last-child { grid-column: auto; }
 }
 @media (max-width: 600px) {
-  .hero h1 { font-size: clamp(39px, 10.5vw, 54px); }
+  .hero h1 { font-size: clamp(1.75rem, 8.3vw, 2.75rem); line-height: 1.16; letter-spacing: -.035em; }
   .hero { padding-bottom: 48px; }
   .hero-photo { height: 370px; }
   .hero-photo-wrap { border-radius: 100px 100px 26px 26px; }
@@ -398,3 +400,60 @@ body:has(.cookie-banner:not([hidden])) .floating-whatsapp { visibility: hidden; 
 .clinic-track::-webkit-scrollbar { display: none; }
 .clinic-slide figcaption { min-height: 64px; display: flex; align-items: center; font-weight: 600; line-height: 1.5; }
 .gallery-controls { gap: 20px; }
+
+/* Keep long Portuguese text inside its column, including with enlarged text. */
+.hero-grid > *, .pillars-grid > *, .therapy-grid > *, .signs-grid > *,
+.sign-list > *, .steps-grid > *, .contact-grid > *, .contact-card > *,
+.faq-layout > *, .footer-grid > *, .structure-grid > * { min-width: 0; }
+h1, h2, h3, p, figcaption, summary, .btn, .contact-card, .check-list { overflow-wrap: anywhere; }
+.btn { white-space: normal; text-align: center; padding-block: 12px; }
+.menu-toggle { flex-shrink: 0; }
+@media (max-width: 600px) {
+  .lead { font-size: 1rem; line-height: 1.75; }
+  .hero-actions { grid-template-columns: minmax(0, 1fr); }
+  .hero-card { position: static; width: auto; margin: 12px 0 0; box-shadow: none; }
+  .hero-photo { height: auto; aspect-ratio: 3 / 4; }
+  .therapy-card.featured { grid-template-columns: minmax(0, 1fr); }
+  .therapy-card.featured p { grid-column: auto; }
+  .contact-section { padding-block: 56px; }
+  .contact-card { padding: 24px; }
+  .site-footer { padding-bottom: 88px; }
+  .legal-page ~ .site-footer { padding-bottom: 40px; }
+}
+
+/* Logos fornecidas pela clínica, em uma faixa compacta. */
+.plans-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px 36px; }
+.plans-inner > .text-link { grid-column: 1 / -1; }
+.private-care { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid var(--line); }
+.private-care > div { min-width: 0; }
+.private-care h3 { margin: 0 0 8px; font-size: 20px; }
+.private-care p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.private-care .btn { flex-shrink: 0; }
+.plan-logos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; width: 100%; }
+.plan-card { min-width: 0; height: 76px; padding: 12px; background: #fff; border: 1px solid #e8eef1; border-radius: 14px; }
+.plan-card img { width: 100%; max-width: 120px; height: 48px; object-fit: contain; }
+.plan-luminar { background: #fff; overflow: hidden; }
+/* Apresentação monocromática: marca escura sobre branco, preservando o arquivo original. */
+.plan-luminar img { filter: grayscale(1) invert(1) contrast(5); mix-blend-mode: multiply; }
+@media (max-width: 1080px) {
+  .plans-inner { grid-template-columns: minmax(0, 1fr); }
+  .plan-logos { max-width: 600px; }
+}
+@media (max-width: 600px) {
+  .private-care { flex-direction: column; align-items: stretch; }
+  .plan-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 360px; gap: 10px; }
+  .plan-card { height: 72px; padding: 12px 16px; }
+}
+
+/* Seleção das fotos reais na abertura. */
+.hero-photo-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
+.hero-photo-options[hidden] { display: none; }
+.hero-photo-options button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; }
+.hero-photo-options button[aria-pressed="true"] { background: #a92854; border-color: #a92854; color: #fff; }
+
+.hero-carousel-controls { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.hero-carousel-controls[hidden] { display: none; }
+.hero-carousel-controls button { min-width: 44px; min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: #fff; cursor: pointer; font: inherit; }
+.hero-carousel-controls .hero-prev, .hero-carousel-controls .hero-next { font-size: 24px; }
+.hero-carousel-controls .hero-pause { font-size: 12px; }
+.hero-count { font-size: 13px; font-weight: 700; }
